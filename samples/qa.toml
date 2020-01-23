@@ -1,0 +1,6 @@
+﻿# ENV: QA
+
+
+[application]
+name = "Z"
+env = "qa"

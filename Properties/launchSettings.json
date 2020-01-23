@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "cenv": {
+      "commandName": "Project",
+      "commandLineArgs": "apply ..\\..\\..\\samples\\dev.toml ..\\..\\..\\samples\\template.config -o c.xml"
+    }
+  }
+}
