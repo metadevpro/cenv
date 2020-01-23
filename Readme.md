@@ -1,5 +1,7 @@
 ﻿# cenv
 
+[![Build Status](https://travis-ci.com/metadevpro/cenv.svg?branch=master)](https://travis-ci.com/metadevpro/cenv)
+
 It Creates Environment Files for *.config files in safe and reproducible way.
 
 No more manual editing of config files!
