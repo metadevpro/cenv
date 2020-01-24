@@ -2,23 +2,21 @@
 
 [![Build Status](https://travis-ci.com/metadevpro/cenv.svg?branch=master)](https://travis-ci.com/metadevpro/cenv)
 
-It Creates Environment Files for *.config files in safe and reproducible way.
+**Cenv** creates .NET `*.config` environment files in a safe and reproducible way.
 
 No more manual editing of config files!
 
 ## Philosophy
 
-Following the principles of [The 12 Factor Apps](https://12factor.net/), environment data must be injected 
-when preparing for deployment into an environment (deploy time) and not at *build time*.
+According to the principles of [The 12 Factor Apps](https://12factor.net/), configuration data should be injected into the runtime enviroment during the *deployment*, not during the *build*.
 
-*NO hardcode values* for environment must be present in developer code nor in the repository. 
-Otherwise this practice produce environment errors and leakage of credentials. 
+There should be *NO hardcoded environment configuration values* in developer code nor in the repository. Hardcoded values lead to environment errors and exposure of secrets such as credentials.
 
-This tools enforce the separation and provides a simple CLI tool for applying and checking configuration to config templates.
-This enables the usage in automation escenarios like Continous Integration or Continous Deployment.
+Cenv is a simple CLI tool that adheres to this philosophy, enabling deployment automation scenarios such as Continous Integration (CI) and Continous Deployment (CD). 
 
-Environment data is encoded in [TOML files](https://en.wikipedia.org/wiki/TOML).
-See sample:
+You encode configuration values in [TOML template files](https://en.wikipedia.org/wiki/TOML). Cenv applies and checks these values to your tokenized `*.config` configuration files.
+
+## Example
 
 ```toml
 # Application Z. Environment: DEV
@@ -46,7 +44,7 @@ path = "tmp/"
 redis= "tcp://redis:15678"
 ```
 
-Configuration files are typical config .NET files. See example:
+Configuration files are typical config .NET files such as this one:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -68,24 +66,24 @@ Configuration files are typical config .NET files. See example:
 </configuration>
 ```
 
-Please note values marked as *TBD* (to be defined) are intended to be replaced at a later stage (where enviroment is set).
+Note the token values marked *TBD* ("to be defined"). They are replaced at a later stage, when the enviroment is set.
 
 *By design*: *Only* `ConnectionStrings` and `AppSettings` sections will be replaced.
 
 ## Usage
 
-1. To apply enviroment data to a config file:
+1. Apply enviroment data to a config file:
 
 ```sh
 cenv apply dev.toml template.config -o webconfig.xml
 ```
 
-Simulation is allowed with the `--dry-run` option.
+You can _preview_ this operation, without making the changes, by adding the `--dry-run` option.
 ```sh
 cenv apply dev.toml template.config --dry-run
 ```
 
-2. To check a generated file is fully configured (no missing data pending to be defined):
+2. Check that a generated file is fully configured, with no unreplaced *TBD* tokens:
 
 ```sh
 cenv check dev.toml webconfig.xml
@@ -114,7 +112,7 @@ cenv help
 
 ## Build
 
-Buiding it requires a .NET Core 3.1 installation.
+Buiding the project requires a .NET Core 3.1 installation.
 
 Then:
 
