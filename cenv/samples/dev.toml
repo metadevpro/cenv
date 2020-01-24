@@ -1,0 +1,23 @@
+﻿# Application Z. Environment: DEV
+
+[application]
+name = "Z"
+env = "dev"
+
+[connectionStrings.cnx1]
+connectionString = "Data Source=mb-db1 ..."
+providerName = "System.Data.SqlClient"
+
+[connectionStrings.cnx2]
+connectionString = "Data Source=mb-db2 ..."
+providerName = "System.Data.SqlClient"
+
+[connectionStrings.cnx3]
+connectionString = "Data Source=mb-db3 ..."
+providerName = "System.Data.SqlClient"
+
+[appSettings]
+user = "u1" 
+password = "sec3" 
+path = "tmp/"
+redis= "tcp://redis:15678"

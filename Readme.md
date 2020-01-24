@@ -113,6 +113,15 @@ For help Type:
 cenv help
 ```
 
+## Build
+
+```sh
+dotnet restore
+dotnet build
+dotnet test
+dotnet run --project cenv
+```
+
 ## License
 
 This software is licensed under the MIT License.

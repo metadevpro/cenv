@@ -50,8 +50,6 @@ namespace Metadev.cenv
         }
         public static int Execute(ArgsOptions options)
         {
-           
-
             var config = Toml.ReadFile(options.EnvFile);
             var xmlDoc = new XmlDocument();
             xmlDoc.Load(options.TemplateFile);
