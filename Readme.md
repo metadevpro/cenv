@@ -68,7 +68,7 @@ Configuration files are typical config .NET files. See example:
 </configuration>
 ```
 
-Please note values marked as *TDB* (to be defined) are intended to be replaced at a later stage (where enviroment is set).
+Please note values marked as *TBD* (to be defined) are intended to be replaced at a later stage (where enviroment is set).
 
 
 By design: *Only* `ConnectionStrings` and `AppSetting` sections will be replaced.
