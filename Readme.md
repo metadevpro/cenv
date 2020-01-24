@@ -70,8 +70,7 @@ Configuration files are typical config .NET files. See example:
 
 Please note values marked as *TBD* (to be defined) are intended to be replaced at a later stage (where enviroment is set).
 
-
-By design: *Only* `ConnectionStrings` and `AppSetting` sections will be replaced.
+*By design*: *Only* `ConnectionStrings` and `AppSetting` sections will be replaced.
 
 ## Usage
 
@@ -114,6 +113,8 @@ cenv help
 ```
 
 ## Build
+
+For buiding it requires a .NET Core 3.1 installation. Then:
 
 ```sh
 dotnet restore
