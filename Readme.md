@@ -8,11 +8,11 @@ No more manual editing of config files!
 
 ## Philosophy
 
-According to the principles of [The 12 Factor Apps](https://12factor.net/), configuration data should be injected into the runtime enviroment during the *deployment*, not during the *build*.
+According to the principles of [The 12 Factor Apps](https://12factor.net/), enviroment-aware configuration data should be injected into the runtime enviroment during *deployment* time, not during the *build* time.
 
 There should be *NO hardcoded environment configuration values* in developer code nor in the repository. Hardcoded values lead to environment errors and exposure of secrets such as credentials.
 
-Cenv is a simple CLI tool that adheres to this philosophy, enabling deployment automation scenarios such as Continous Integration (CI) and Continous Deployment (CD). 
+*Cenv* is a simple CLI tool that adheres to this philosophy, enabling deployment automation scenarios such as Continous Integration (CI) and Continous Deployment (CD).
 
 You encode configuration values in [TOML template files](https://en.wikipedia.org/wiki/TOML). Cenv applies and checks these values to your tokenized `*.config` configuration files.
 
