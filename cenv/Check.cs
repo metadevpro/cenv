@@ -14,8 +14,9 @@ namespace Metadev.cenv
         }
         public static void ReportConnectionStringError(string section, string key, string property, string currentValue)
         {
-            Console.WriteLine(string.Format("{0,3} Error U1: {1}/{2} @{3,-20} Is not defined. Actual='{4}'",
+            Console.WriteLine(string.Format("{0,3} Error {1}: {2}/{3} @{4,-20} Is not defined. Actual='{5}'",
                 ++Errors,
+                ErrorTypes.UNDEFINED_CONNECTION_STRING,
                 section,
                 key,
                 property,
@@ -23,16 +24,18 @@ namespace Metadev.cenv
         }
         public static void ReportAppSettingError(string section, string key, string currentValue)
         {
-            Console.WriteLine(string.Format("{0,3} Error U2: {1}/{2,-32} Is not defined. Actual='{3}'",
-                ++Errors, 
+            Console.WriteLine(string.Format("{0,3} Error {1}: {2}/{3,-32} Is not defined. Actual='{4}'",
+                ++Errors,
+                ErrorTypes.UNDEFINED_APP_SETTING,
                 section,
                 key,
                 currentValue));
         }
         public static void ReportConnectionStringMismatch(string section, string key, string property, string configValue, string actualValue)
         {
-            Console.WriteLine(string.Format("{0,3} Error M1: {1}/{2} @{3,-20} Does not match. Config: '{4}' Actual: '{5}'",
+            Console.WriteLine(string.Format("{0,3} Error {1}: {2}/{3} @{4,-20} Does not match. Config: '{5}' Actual: '{6}'",
                 ++Errors,
+                ErrorTypes.MODIFIED_CONNECTION_STRING,
                 section,
                 key,
                 property,
@@ -41,8 +44,9 @@ namespace Metadev.cenv
         }
         public static void ReportAppSettingMismatch(string section, string key, string configValue, string actualValue)
         {
-            Console.WriteLine(string.Format("{0,3} Error M2: {1}/{2,-32} Does not match. Config: '{3}' Actual: '{4}'",
+            Console.WriteLine(string.Format("{0,3} Error {1}: {2}/{3,-32} Does not match. Config: '{4}' Actual: '{5}'",
                 ++Errors,
+                ErrorTypes.MODIFIED_APP_SETTING,
                 section,
                 key,
                 configValue,
