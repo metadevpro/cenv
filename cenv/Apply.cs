@@ -33,7 +33,7 @@ namespace Metadev.cenv
             {
                 xmlDoc.Save(options.OutputFile);
             }
-            return 0;
+            return ErrorCodes.NO_ERROR;
         }
 
         static void ApplyConnectionStrings(TomlTable table, XmlDocument xmlDoc)
