@@ -24,13 +24,13 @@ namespace Metadev.cenv
                         return Check.Execute(options);
                     case Command.None:
                     default:
-                        return 1;
+                        return ErrorCodes.NO_COMMAND_SPECIFIED;
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.ToString());
-                return 1000;
+                return ErrorCodes.INTERNAL_EXCEPION;
             }
         }
         static int Help()
@@ -58,7 +58,7 @@ namespace Metadev.cenv
             Console.WriteLine("");
             Console.WriteLine("   -m");
             Console.WriteLine("   --missing <keyword>    Defines the value for missing values on check. Default: TBD.");
-            return 0;
+            return ErrorCodes.NO_ERROR;
         }        
     }
 }

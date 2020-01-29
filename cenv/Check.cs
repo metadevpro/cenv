@@ -118,12 +118,12 @@ namespace Metadev.cenv
 
             if (Errors == 0)
             {
-                return 0;
+                return ErrorCodes.NO_ERROR;
             }
             else
             {
                 Console.WriteLine(string.Format("{0} errors were found.", Errors));
-                return 42;
+                return ErrorCodes.VALIDATION_ERRORS_FOUND;
             }
         }
     }
