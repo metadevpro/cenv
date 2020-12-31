@@ -1,7 +1,6 @@
 ﻿# cenv
 
 [![Build Status](https://travis-ci.com/metadevpro/cenv.svg?branch=master)](https://travis-ci.com/metadevpro/cenv)
-[![Known Vulnerabilities](https://snyk.io/test/github/metadevpro/cenv/badge.svg?targetFile=cenv/cenv.csproj)](https://snyk.io/test/github/metadevpro/cenv?targetFile=cenv/cenv.csproj)
 
 **Cenv** creates .NET `*.config` environment files in a safe and reproducible way.
 
